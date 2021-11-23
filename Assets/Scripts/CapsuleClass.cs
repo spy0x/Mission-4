@@ -17,6 +17,11 @@ public class CapsuleClass : ShapeBehaviour
     }
     protected override void DoActionOnOver()
     {
+        TriggerAnimation();
+    }
+
+    private void TriggerAnimation()
+    {
         anim.SetTrigger("Over");
     }
 }

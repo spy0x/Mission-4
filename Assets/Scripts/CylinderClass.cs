@@ -7,9 +7,13 @@ public class CylinderClass : ShapeBehaviour
     [SerializeField] private float rotationSpeed;
     protected override void DoActionOnDown()
     {
-        meshRenderer.material.color = Random.ColorHSV();
+        ChangeColor();
     }
     protected override void DoActionOnOver()
+    {
+        Rotate();
+    }
+    private void Rotate()
     {
         transform.Rotate(1 * rotationSpeed * Time.deltaTime, 0, 0);
     }

@@ -7,10 +7,14 @@ public class CubeClass : ShapeBehaviour
     [SerializeField] private AudioSource audioSource;
     protected override void DoActionOnDown()
     {
-        audioSource.Play();
+        PlaySound();
     }
     protected override void DoActionOnOver()
     {
-        meshRenderer.material.color = Random.ColorHSV();
+        ChangeColor();
+    }
+    private void PlaySound()
+    {
+        audioSource.Play();
     }
 }
