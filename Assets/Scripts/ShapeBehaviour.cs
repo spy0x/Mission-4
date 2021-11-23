@@ -7,8 +7,9 @@ using TMPro;
 public class ShapeBehaviour : MonoBehaviour
 {
     [ColorUsage(false, false)]
-    [SerializeField] protected Color color;
+    [SerializeField] private Color color;
     [SerializeField] private TextMeshProUGUI totalClicks;
+    [SerializeField] private TextMeshProUGUI shapeClicksTxt;
     private int shapeClicks = 0;
     protected MeshRenderer meshRenderer;
     private static int allShapesTotalClicks;
@@ -45,6 +46,7 @@ public class ShapeBehaviour : MonoBehaviour
     private void UpdateUI()
     {
         totalClicks.text = $"Total Clicks: {allShapesTotalClicks}";
+        shapeClicksTxt.text = $"Clicks: {shapeClicks}";
     }
 
     protected virtual void DoActionOnDown()
