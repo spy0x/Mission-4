@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CylinderClass : ShapeBehaviour
 {
-    [SerializeField] private float rotationSpeed;
+    [SerializeField] private float rotationSpeed = 1;
     protected override void DoActionOnDown()
     {
         ChangeColor();
