@@ -13,7 +13,7 @@ public class ShapeBehaviour : MonoBehaviour
     private int shapeClicks = 0;
     protected MeshRenderer meshRenderer;
     private static int allShapesTotalClicks;
-    public static int AllShapesTotalClicks { get { return allShapesTotalClicks; } set { allShapesTotalClicks = value; } }
+    public static int AllShapesTotalClicks { get { return allShapesTotalClicks; } set { allShapesTotalClicks = value; } } // ENCAPSULATION
     protected virtual void Start()
     {
         UpdateUI();
@@ -22,8 +22,8 @@ public class ShapeBehaviour : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        DoActionOnDown();
-        AddClickCounts();
+        DoActionOnDown(); 
+        AddClickCounts(); // ABSTRACTION
     }
     private void OnMouseOver()
     {
@@ -33,9 +33,9 @@ public class ShapeBehaviour : MonoBehaviour
     {
         allShapesTotalClicks++;
         shapeClicks++;
-        UpdateUI();
+        UpdateUI(); // ABSTRACTION
     }
-    protected void ChangeColor()
+    protected void ChangeColor() // POLYMORPHISM (Method Overloading)
     {
         meshRenderer.material.color = Random.ColorHSV();
     }

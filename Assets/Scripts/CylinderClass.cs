@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CylinderClass : ShapeBehaviour
+public class CylinderClass : ShapeBehaviour // INHERITANCE
 {
     [SerializeField] private float rotationSpeed = 1;
-    protected override void DoActionOnDown()
+    protected override void DoActionOnDown() // POLYMORPHISM
     {
-        ChangeColor();
+        ChangeColor(); // ABSTRACTION
     }
-    protected override void DoActionOnOver()
+    protected override void DoActionOnOver() // POLYMORPHISM
     {
-        Rotate();
+        Rotate(); // ABSTRACTION
     }
     private void Rotate()
     {

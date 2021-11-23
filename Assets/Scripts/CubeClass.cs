@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
-public class CubeClass : ShapeBehaviour
+public class CubeClass : ShapeBehaviour // INHERITANCE
 {
     [SerializeField] private AudioSource audioSource;
-    protected override void DoActionOnDown()
+    protected override void DoActionOnDown() // POLYMORPHISM
     {
-        PlaySound();
+        PlaySound(); // ABSTRACTION
     }
-    protected override void DoActionOnOver()
+    protected override void DoActionOnOver() // POLYMORPHISM
     {
         ChangeColor();
     }
