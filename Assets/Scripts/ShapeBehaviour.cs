@@ -5,27 +5,36 @@ using UnityEngine;
 
 public class ShapeBehaviour : MonoBehaviour
 {
-    [SerializeField] private Color32 color;
+    [ColorUsage(false, false)]
+    [SerializeField] protected Color color;
     private int shapeClicks = 0;
+    protected MeshRenderer meshRenderer;
     private static int allShapesTotalClicks;
     public static int AllShapesTotalClicks { get { return allShapesTotalClicks; } set { allShapesTotalClicks = value; } }
-    private void Start()
+    protected virtual void Start()
     {
-        GetComponent<MeshRenderer>().material.color = color;
+        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.material.color = color;
     }
     private void OnMouseDown()
     {
-        DoAction();
-        AddClickCount();
+        DoActionOnDown();
+        AddClickCounts();
     }
-
-    private void AddClickCount()
+    private void OnMouseOver()
+    {
+        DoActionOnOver();
+    }
+    private void AddClickCounts()
     {
         allShapesTotalClicks++;
         shapeClicks++;
     }
-
-    protected virtual void DoAction()
+    protected virtual void DoActionOnDown()
+    {
+        Debug.Log("Override this method please");
+    }
+    protected virtual void DoActionOnOver()
     {
         Debug.Log("Override this method please");
     }
