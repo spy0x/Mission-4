@@ -1,4 +1,4 @@
-using System;
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,6 +29,14 @@ public class ShapeBehaviour : MonoBehaviour
     {
         allShapesTotalClicks++;
         shapeClicks++;
+    }
+    protected void ChangeColor()
+    {
+        meshRenderer.material.color = Random.ColorHSV();
+    }
+    protected void ChangeColor(Color color)
+    {
+        meshRenderer.material.color = color;
     }
     protected virtual void DoActionOnDown()
     {
